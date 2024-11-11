@@ -13,24 +13,26 @@ namespace ActivitatsProgramacio
         }
         public static void Main()
         {
-            const string MSG1 = "Put a number and i will tell you if it's natural:";
-            const string ERROR = "The format of the number is incorrect";
+            const string Msg1 = "Put a number and i will tell you if it's natural:";
+            const string Error = "The format of the number is incorrect";
             int num;
-            Console.WriteLine(MSG1);
+            Console.WriteLine(Msg1);
             try
             {
                 num = int.Parse(Console.ReadLine());
                 Comprovar(num);
             }
-            catch (Exception)
+            catch (FormatException)
             {
-                Console.WriteLine(ERROR);
+                Console.WriteLine(Error);
             }
         }
 
     }
 }
 ```
+Clases de equivalencia: Naturales
+Valores limite: 1, 0, -1, 99999, -423
 2. 
 ```c#
 using System;
@@ -40,30 +42,33 @@ namespace ActivitatsProgramacio
     //Postcon: L'usuari obte el primer valor elevat pel segon.
     public class Activitats
     {
-        public static int Elevate(int num1,int num2)
+        public static int Pow(int baseNum, int expNum)
         {
-            num1 = (int)Math.Pow(num1, num2); //para que usar un metodo para usar otro metodo?
-            return num1;
-        }
-        public static void Main()
-        {
-            const string MSG1 = "Put two numbers and i will elevate them";
-            const string ERROR = "The format of the number is incorrect";
-            int num, num2, result;
-            Console.WriteLine(MSG1);
-            try
+            for(int iteration = 0; iteration < expNum; iteration++)
             {
-                num = int.Parse(Console.ReadLine());
-                num2 = int.Parse(Console.ReadLine());
-                result = Elevate(num, num2);
-                Console.WriteLine(result);
+                baseNum *= baseNum;
             }
-            catch (Exception)
-            {
-                Console.WriteLine(ERROR);
-            }
+            return baseNum;
         }
 
+        public static void Main()
+        {
+            const string Msg1 = "Put two numbers and i will elevate them";
+            const string Error = "The format of the number is incorrect";
+            int baseNum, expNum, result;
+            Console.WriteLine(Msg1);
+            try
+            {
+                baseNum = int.Parse(Console.ReadLine());
+                expNum = int.Parse(Console.ReadLine());
+                result = Pow(baseNum, expNum);
+                Console.WriteLine(result);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine(Error);
+            }
+        }
     }
 }
 ```
@@ -76,24 +81,26 @@ namespace ActivitatsProgramacio
     //Postcon: L'usuari sap si el valor es negatiu.
     public class Activitats
     {
-        public static void Comprovar(int num)
+        public static bool Comprovar(int num)
         {
-            Console.WriteLine(num < 0 ? "It's Negative" : "It's not Negative");
+            return num < 0;
         }
         public static void Main()
         {
-            const string MSG1 = "Put a number and i will tell you if it's negative:";
-            const string ERROR = "The format of the number is incorrect";
+            const string Msg1 = "Put a number and i will tell you if it's negative:";
+            const string Msg2 = "It's Negative";
+            const string Msg3 = "It's not Negative";
+            const string Error = "The format of the number is incorrect";
             int num;
-            Console.WriteLine(MSG1);
+            Console.WriteLine(Msg11);
             try
             {
                 num = int.Parse(Console.ReadLine());
-                Comprovar(num);
+                Console.WriteLine(Comprovar(num) ? Msg2 : Msg3);
             }
             catch (Exception)
             {
-                Console.WriteLine(ERROR);
+                Console.WriteLine(Error);
             }
         }
 
