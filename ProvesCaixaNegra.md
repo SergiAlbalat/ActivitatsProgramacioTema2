@@ -9,24 +9,24 @@
     - Test 1:
     Entrada: 0
     Resultat esperat: True
-    Resultat obtingut: 
+    Resultat obtingut: True
     - Test 2:
     Entrada: -1
     Resultat esperat: False
-    Resultat obtingut: 
+    Resultat obtingut: False
     - Test 3:
     Entrada: 120
     Resultat esperat: True
-    Resultat obtingut: 
+    Resultat obtingut: True
     - Test 4:
     Entrada: 121
     Resultat esperat: False
-    Resultat obtingut: 
+    Resultat obtingut: False
     - Test 5:
     Entrada: -213
     Resultat esperat: False
-    Resultat obtingut:
+    Resultat obtingut: False
     - Test 6:
     Entrada: 3424
     Resultat esperat: False
-    Resultat obtingut: 
+    Resultat obtingut: False
